@@ -1,0 +1,9 @@
+{
+  "tax_rate": {
+    "exempt_food": 0,
+    "basic_food": 0.05,
+    "luxury_food": 0.12,
+    "gadgets": 0.18,
+    "sin_goods": 0.28
+  }
+}

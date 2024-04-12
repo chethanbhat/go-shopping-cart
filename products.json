@@ -1,0 +1,88 @@
+{
+  "products": [
+    {
+      "id": "P001",
+      "name": "milk",
+      "category": "exempt_food",
+      "price": 30
+    },
+    {
+      "id": "P002",
+      "name": "coffee",
+      "category": "exempt_food",
+      "price": 50
+    },
+    {
+      "id": "P003",
+      "name": "eggs",
+      "category": "exempt_food",
+      "price": 5
+    },
+    {
+      "id": "P004",
+      "name": "cheese",
+      "category": "luxury_food",
+      "price": 100
+    },
+    {
+      "id": "P005",
+      "name": "rice",
+      "category": "basic_food",
+      "price": 20
+    },
+    {
+      "id": "P006",
+      "name": "flour",
+      "category": "basic_food",
+      "price": 40
+    },
+    {
+      "id": "P007",
+      "name": "sweets",
+      "category": "basic_food",
+      "price": 100
+    },
+    {
+      "id": "P008",
+      "name": "chocolates",
+      "category": "luxury_food",
+      "price": 70
+    },
+    {
+      "id": "P009",
+      "name": "corn flakes",
+      "category": "luxury_food",
+      "price": 200
+    },
+    {
+      "id": "P010",
+      "name": "mobile phone",
+      "category": "gadgets",
+      "price": 10000
+    },
+    {
+      "id": "P011",
+      "name": "laptop",
+      "category": "gadgets",
+      "price": 70000
+    },
+    {
+      "id": "P012",
+      "name": "cigarettes",
+      "category": "sin_goods",
+      "price": 300
+    },
+    {
+      "id": "P013",
+      "name": "beer",
+      "category": "sin_goods",
+      "price": 250
+    },
+    {
+      "id": "P014",
+      "name": "whiskey",
+      "category": "sin_goods",
+      "price": 3000
+    }
+  ]
+}

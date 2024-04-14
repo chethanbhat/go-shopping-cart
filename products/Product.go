@@ -23,14 +23,14 @@ func Create(id string, name string, category string, price float64) Product {
 }
 
 // Display all Products
-func Display(products []Product) {
-	for _, item := range products {
+func (products *Products) Display() {
+	for _, item := range products.Products {
 		fmt.Printf("%s : %s\n", item.ID, strings.ToUpper(item.Name))
 	}
 }
 
-func GetProductByID(products []Product, productID string) (Product, error) {
-	for _, item := range products {
+func (products *Products) GetProductByID(productID string) (Product, error) {
+	for _, item := range products.Products {
 		if item.ID == productID {
 			return item, nil
 		}

@@ -64,8 +64,8 @@ func main() {
 
 }
 
-func displayAllProducts(p []products.Product) {
-	products.Display(p)
+func displayAllProducts(p products.Products) {
+	p.Display()
 }
 
 func showOptions() {
@@ -78,33 +78,33 @@ func showOptions() {
 }
 
 func addProducts(p products.Products, c *cart.Cart, t map[string]float64) {
-	displayAllProducts(p.Products)
+	displayAllProducts(p)
 	selectedProductID := ""
 	for !checkforValidProductID(p.Products, selectedProductID) {
 		fileoperations.ReadUserInput("Enter Product ID", &selectedProductID)
 	}
-	selectedProduct, err := products.GetProductByID(p.Products, selectedProductID)
+	selectedProduct, err := p.GetProductByID(selectedProductID)
 	if err != nil {
 		errorhandling.Manage(err)
 		return
 	}
 	taxRate := t[selectedProduct.Category]
-	cart.AddToCart(c, selectedProduct, taxRate)
+	c.AddToCart(selectedProduct, taxRate)
 
 }
 
 func removeProducts(p products.Products, c *cart.Cart) {
-	displayAllProducts(p.Products)
+	displayAllProducts(p)
 	selectedProductID := ""
 	for !checkforValidProductID(p.Products, selectedProductID) {
 		fileoperations.ReadUserInput("Enter Product ID", &selectedProductID)
 	}
-	selectedProduct, err := products.GetProductByID(p.Products, selectedProductID)
+	selectedProduct, err := p.GetProductByID(selectedProductID)
 	if err != nil {
 		errorhandling.Manage(err)
 		return
 	}
-	cart.RemoveFromCart(c, selectedProduct)
+	c.RemoveFromCart(selectedProduct)
 }
 
 func viewcart(c *cart.Cart) {
@@ -119,7 +119,7 @@ func viewcart(c *cart.Cart) {
 }
 
 func checkout(c *cart.Cart) {
-	cartTotal := cart.GetCartTotal(c)
+	cartTotal := c.GetCartTotal()
 	fmt.Println("Your Cart Total: ", cartTotal)
 	fileID := uuid.New()
 	filename := fmt.Sprintf("order-%s.json", &fileID)

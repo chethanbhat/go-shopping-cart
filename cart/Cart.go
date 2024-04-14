@@ -26,7 +26,7 @@ func CreateCart() Cart {
 }
 
 // Add to Cart
-func AddToCart(o *Cart, p products.Product, taxRate float64) {
+func (o *Cart) AddToCart(p products.Product, taxRate float64) {
 	// Initialize the Items slice if it's nil
 	if o.Items == nil {
 		o.Items = make([]CartItem, 0)
@@ -61,7 +61,7 @@ func AddToCart(o *Cart, p products.Product, taxRate float64) {
 }
 
 // Remove from Cart
-func RemoveFromCart(o *Cart, p products.Product) {
+func (o *Cart) RemoveFromCart(p products.Product) {
 	if o.Items == nil {
 		return
 	}
@@ -77,7 +77,7 @@ func RemoveFromCart(o *Cart, p products.Product) {
 }
 
 // Get Cart Total
-func GetCartTotal(o *Cart) float64 {
+func (o *Cart) GetCartTotal() float64 {
 	total := 0.0
 	for _, item := range o.Items {
 		total += item.TotalAfterTax
